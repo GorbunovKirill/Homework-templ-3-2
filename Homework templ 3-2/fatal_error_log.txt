@@ -1,0 +1,2 @@
+Fatal Error: This is a fatal error message.
+Fatal Error: This is a fatal error message.
