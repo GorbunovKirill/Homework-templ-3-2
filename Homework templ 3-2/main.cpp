@@ -5,7 +5,6 @@
 #include <memory>
 #include <algorithm>
 
-// Интерфейс наблюдателя
 class Observer {
 public:
     virtual ~Observer() = default;
@@ -14,7 +13,6 @@ public:
     virtual void onFatalError(const std::string& message) {}
 };
 
-// Наблюдаемый класс
 class Observable {
     std::vector<Observer*> observers;
 public:
@@ -45,7 +43,6 @@ public:
     }
 };
 
-// Класс для работы с предупреждениями
 class ConsoleWarningObserver : public Observer {
 public:
     void onWarning(const std::string& message) override {
@@ -53,7 +50,7 @@ public:
     }
 };
 
-// Класс для работы с ошибками
+
 class FileErrorObserver : public Observer {
     std::string filepath_;
 public:
@@ -71,7 +68,6 @@ public:
     }
 };
 
-// Класс для работы с фатальными ошибками
 class ConsoleAndFileFatalErrorObserver : public Observer {
     std::string filepath_;
 public:
